@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 twint = {git = "https://github.com/twintproject/twint.git"}
+pymongo = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
