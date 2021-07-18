@@ -1,4 +1,5 @@
 import json
+import time
 import twint
 import datetime
 import os
@@ -58,5 +59,7 @@ scrape_limit = int(os.getenv("SCRAPE_LIMIT") or "100")
 client = MongoClient(conn_str)
 db = client["tweets"]
 
-for user in scrape_users:
-    scrape_user(user, scrape_limit)
+while True:    
+    for user in scrape_users:
+        scrape_user(user, scrape_limit)
+    time.sleep(5*60)
